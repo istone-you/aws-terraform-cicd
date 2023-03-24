@@ -21,7 +21,7 @@ resource "aws_codepipeline" "tf_pipeline" {
       configuration = {
         ConnectionArn    = aws_codestarconnections_connection.aws-terraform-cicd.arn
         BranchName       = "master"
-        FullRepositoryId = "istone-you/my-amplify-website-terraform"
+        FullRepositoryId = var.github_repo
       }
       region    = var.aws_region
       namespace = "SourceVariables"
